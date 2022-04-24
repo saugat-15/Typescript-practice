@@ -118,9 +118,42 @@ class Person implements personInterface {
 
 const saugat = new Person(1, 'Saugat Giri');
 const rujan = new Person(3, 'Rujan Shrestha')
-console.log(saugat, rujan);
+
+// SUBCLASSES // EXTENDED CLASSES
+
+class Employee extends Person {
+    position: string 
+    
+    constructor(id: number, name: string, position: string) {
+        super(id, name)
+        this.position = position
+    }
+}
+
+const emp = new Employee(3, 'Saugat', 'Developer');
+// console.log(emp);
+
+// GENERICS : used for creating resuable functions/components
+
+function getArray<T>(items: T[]): T[]{
+    return new Array().concat(items)
+}
+
+let numArray = getArray<number>([1, 2, 3, 4]);
+let stringArray = getArray<string>(['Saugat', 'John', 'Brad']);
+
+stringArray.push('hello');
+
+
+function getString<T>(elements: T): T{
+    return elements
+}
+
+let strString = getString<string>('stringaljdklskjdalksdjlkasjdlkjd')
+
+console.log(stringArray, strString);
 
 
 
 
-console.log(customerId, personalId, user1, saugat.register(), rujan.register())
+// console.log(customerId, personalId, user1, saugat.register(), rujan.register())
