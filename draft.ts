@@ -135,6 +135,9 @@ const emp = new Employee(3, 'Saugat', 'Developer');
 
 // GENERICS : used for creating resuable functions/components
 
+//this is how we mention type for the arrays: type[]
+//for mentioning type for other data structures we use placeholder : <type>
+
 function getArray<T>(items: T[]): T[]{
     return new Array().concat(items)
 }
